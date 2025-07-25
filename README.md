@@ -24,20 +24,15 @@
 - Поддержка анонимных отчетов (user_id = null)
 - Уникальные report_id
 
-### Конфигурация через переменные окружения
-
-Все настройки вынесены в `.env`:
-- `REPORT_COST_CENTS=1000` - стоимость отчета
-- `JWT_EXPIRATION_HOURS=24` - время жизни токена
-- `CAPTCHA_LIFETIME_MINUTES=5` - время жизни CAPTCHA
-- `DEFAULT_PAGE_LIMIT=10` - лимит пагинации
-
 ## Запуск проекта
 
 ### Требования
 - Docker и Docker Compose
 
 ### Не забудьте установить jq
+```bash
+brew install jq
+```
 
 ### Запуск
 ```bash
