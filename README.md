@@ -152,6 +152,8 @@ curl -X GET "http://localhost:8080/api/user/reports?limit=10&offset=0" \
   "total": 1
 }
 
+```
+```bash
 #пополняем баланс
 curl -X POST "http://localhost:8080/api/user/topup?amount=2500" \
   -H "Authorization: Bearer $TOKEN" | jq .
@@ -159,8 +161,8 @@ curl -X POST "http://localhost:8080/api/user/topup?amount=2500" \
 #чекаем баланс
 curl -X GET "http://localhost:8080/api/user/balance" \
   -H "Authorization: Bearer $TOKEN" | jq .
-
 ```
+
 #### Покупка отчета
 ```bash
 # Успешная покупка (при достаточном балансе)(подставляем report_id)
