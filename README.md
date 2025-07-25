@@ -45,6 +45,7 @@
 git clone <repository-url>
 cd Zloy
 docker-compose up -d --build
+migrate-up
 ```
 
 Сервис доступен: **http://localhost:8080**
@@ -242,10 +243,10 @@ Zloy/
 ```bash
 #быстрый старт
 make start
-
+migrate-up
 ##логи
 logs-app: ## Логи только приложения
-docker-logs: ## Показать логи Docker контейнеров
+logs: ## Показать логи Docker контейнеров
 logs-db: ## Логи баз данных
 ```
 

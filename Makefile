@@ -16,23 +16,6 @@ help: ## Показать справку
 	@echo "$(GREEN)Доступные команды:$(NC)"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  $(YELLOW)%-15s$(NC) %s\n", $$1, $$2}'
 
-build: ## Собрать приложение локально
-	@echo "$(GREEN)Сборка приложения...$(NC)"
-	go build -o $(APP_NAME) ./cmd
-
-test: ## Запустить тесты
-	@echo "$(GREEN)Запуск тестов...$(NC)"
-	go test -v ./...
-
-clean: ## Очистить скомпилированные файлы
-	@echo "$(GREEN)Очистка...$(NC)"
-	rm -f $(APP_NAME)
-	go clean
-
-dev: ## Запуск для разработки
-	@echo "$(GREEN)Запуск для разработки...$(NC)"
-	@if [ ! -f .env ]; then cp env.example .env; fi
-	go run ./cmd
 
 start: ## Запустить приложение в Docker
 	@echo "$(GREEN)Запуск в Docker...$(NC)"
