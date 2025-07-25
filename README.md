@@ -255,30 +255,21 @@ logs-db: ## Логи баз данных
 Скопируйте `env.example` в `.env` и настройте:
 
 ```bash
-# Сервер
+# Порт сервиса
 PORT=8080
-DEFAULT_PAGE_LIMIT=10
 
-# Базы данных
+# MongoDB
+MONGO_URI=mongodb://localhost:27017
+
+# PostgreSQL
 POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=password
 POSTGRES_DB=zl0y_billing
-MONGO_URI=mongodb://localhost:27017
 
-# JWT
-JWT_SECRET=your-secret-key-change-in-production
-JWT_EXPIRATION_HOURS=24
-
-# CAPTCHA
-CAPTCHA_WIDTH=200
-CAPTCHA_HEIGHT=80
-CAPTCHA_NOISE_COUNT=1000
-CAPTCHA_LIFETIME_MINUTES=5
-
-# Бизнес-правила
-REPORT_COST_CENTS=1000
+# JWT Secret (в продакшене должен быть сложным)
+JWT_SECRET=your-secret-key-change-in-production 
 ```
 
 ## ✅ Протестированные функции
